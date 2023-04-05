@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Army builder</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:href="@{styles/css/style.css}" rel="stylesheet"/>
+</head>
+<body>
+    <div class="left">
+        <div class="leftHead">
+            <h1>EpicHammer</h1>
+            <hr>
+        </div>
+        <footer>Этот веб-сайт является неофициальным и никоим образом не поддерживается Games Workshop Limited.</footer>
+    </div>
+
+    <form name="form" class="right">
+        <header>
+            <h1>Космодесант</h1>
+        </header>
+        <div class="calc">
+            <div class="item input">
+                <div class="points">
+                    <fieldset style="display: none">
+                        <legend>План</legend>
+                        <input type="text" name="wantier" placeholder="0">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Расчетная стоимость</legend>
+                        <input type="text" name="textview" readonly value="0">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Доступно поддержки</legend>
+                        <input type="text" name="dops" readonly value="0">
+                    </fieldset>
+                    <fieldset>
+                        <legend>Очков Лордов</legend>
+                        <input type="text" name="lords" readonly value="0">
+                    </fieldset>
+                </div>
+            </div>
+            <div class="item clean" th:onclick="clean()">Обнулить</div>
+            <div class="unit" id="Line">
+                <h2 th:onclick="lineCreate('.lineFormation');">Линейные формации +</h2>
+                <div class="lineFormation"></div>
+                <div class="lineFormationAdd"></div>
+                <hr>
+            </div>
+
+            <div class="item" th:onclick="sapportplus(100)">Саппорт по 100</div>
+            <div class="item" th:onclick="sapportminus(100)">Убрать саппорт по 100</div>
+
+        </div>
+    </form>
+</form>
+</body>
+
+<script th:src="@{js/add.js}"></script>
+<script th:src="@{js/calc.js}"></script>
+<script th:src="@{js/open.js}"></script>
+</html>
